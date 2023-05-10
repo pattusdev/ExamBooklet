@@ -1,0 +1,105 @@
+﻿@page
+@model ExamBooklet.Pages.Booklet.CreateModel
+@{
+}
+<br />
+<h2>Edit Booklet</h2>
+@if (Model.errorMessage.Length > 0)
+{
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>@Model.errorMessage</strong>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+				</div>
+}
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Booklet ID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="BookletId" Value="@Model.bookletInfo.BookletId" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Student ID</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="StudentId" Value="@Model.bookletInfo.StudentId" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Student Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="StudentName" Value="@Model.bookletInfo.StudentName" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Faculty Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="FacultyName" Value="@Model.bookletInfo.FacultyName" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Department Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="DepartmentName" Value="@Model.bookletInfo.DepartmentName" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Course Code</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="CourseCode" Value="@Model.bookletInfo.CourseCode" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Course Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="CourseName" Value="@Model.bookletInfo.CourseName" />
+		</div>
+	</div>
+	<div class="row mb-3">
+	<label class="col-sm-3 col-form-label">Exam Date</label>
+		<div class="col-sm-6">
+			<input type="date" class="form-control" name="ExamDate" value="@Model.bookletInfo.ExamDate" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Lecture Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="LectureName" Value="@Model.bookletInfo.LectureName" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Supervisor Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="SupervisorName" Value="@Model.bookletInfo.SupervisorName"  />
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Marks</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="Marks" Value="@Model.bookletInfo.Marks"  />
+		</div>
+	</div>
+
+	@if (Model.successMessage.Length > 0)
+	{
+					<div class="row mb-3">
+						<div class="col-sm-9">
+							<div class="alert alert-success alert-dismissible fade show" role="alert">
+								<strong>@Model.successMessage</strong>
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+							</div>
+						</div>
+
+					</div>
+
+	}
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/Booklet" role= "button">Cancel</a>
+		</div>
+	</div>
+</form>
